@@ -1,0 +1,30 @@
+<div ng-app="myApp" ng-controller="myCtrl"> 
+
+<div class="container">
+
+<table id="Table" class="table table-striped table-inverse table-hover table-bordered table-responsive" cellspacing="0" width="100%">
+<thead class="thead-inverse">
+<tr>
+ <th class="small-th">Preview</th>
+<th class="small-th">Ups</th>
+<th class="small-th">Title</th>
+<th class="small-th">Sub Title</th>
+<th class="big-th">Number of comments</th>
+</tr>
+</thead>
+
+<tbody>
+<tr ng-repeat="result in myWelcome">
+<td><img height="50" width="50" ng-src="{{result.data.preview.images[0].source.url}}" err-SRC="{{defaultImgSrc}}"></td> 
+<td>{{result.data.ups}}</td>
+<td>{{result.data.title}}</td>
+<td>Created By: <b>{{result.data.author}}</b> on <b>{{result.data.created * 1000 | date}}</b> </td>
+<td>{{result.data.num_comments}}</td>
+
+</tr>
+</tbody>
+
+</table>
+</div>
+
+</div>
